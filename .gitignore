@@ -193,3 +193,6 @@ stencil_annotator/
 # For DocuChat
 apps/language_models/langchain/user_path/
 db_dir_UserData
+
+# mac related stuff
+.DS_Store

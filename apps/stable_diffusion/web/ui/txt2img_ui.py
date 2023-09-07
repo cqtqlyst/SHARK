@@ -390,6 +390,26 @@ with gr.Blocks(title="Text-to-Image") as txt2img_web:
                             label="HuggingFace Model ID",
                             lines=3,
                         )
+                with gr.Accordion(label="Textual Inversion Options", open=False):
+                    with gr.Row():
+
+                        textual_inversion_weights = gr.Dropdown(
+                            label=f"Textual Inversion Weights",
+                            elem_id="textual_inversion_weights",
+                            value="None",
+                            choices=["None"] + get_custom_model_files("txtinv"),
+                        )
+
+                        '''
+                        textual_inversion_path = gr.Textbox(
+                            elem_id="textual_inversion_path",
+                            placeholder="Type in the path to the directory with your textual embeddings",
+                            value="",
+                            label="Textual Inversion Path",
+                            lines=2,
+                        )
+                        '''
+
                 with gr.Accordion(label="Advanced Options", open=False):
                     with gr.Row():
                         scheduler = gr.Dropdown(

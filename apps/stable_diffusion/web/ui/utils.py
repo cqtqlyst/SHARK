@@ -115,7 +115,8 @@ def get_custom_model_pathfile(custom_model_name, model="models"):
 def get_custom_model_files(model="models", custom_checkpoint_type=""):
     ckpt_files = []
     file_types = custom_model_filetypes
-    if model == "lora":
+    if model == "lora" or model == "txtinv":
+        print("got here 2")
         file_types = custom_model_filetypes + ("*.pt", "*.bin")
     for extn in file_types:
         files = [
